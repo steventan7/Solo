@@ -1,0 +1,204 @@
+    * {
+        box-sizing: border-box;
+        color: white;
+    }
+
+    body {
+        background-size: 400% 400%;
+        animation: gradient 25s ease infinite;
+        background: radial-gradient(ellipse at bottom, #324aa8 0%, #090a0f 100%);
+        filter: drop-shadow(0 0 10px white);
+    }
+
+    @keyframes gradient {
+        0% {
+        background-position: 0% 50%;
+        }
+        50% {
+        background-position: 100% 50%;
+        }
+        100% {
+        background-position: 0% 50%;
+        }
+    }
+
+    .glow {
+            color: #8a9eed;
+            animation: glow 1s ease-in-out infinite alternate;
+            font-family: Lucida Handwriting;
+        }
+
+    @-webkit-keyframes glow {
+        from {
+        text-shadow: 0 0 10px #7992f2, 0 0 20px #7992f2, 0 0 30px #7992f2, 0 0 40px #7992f2, 0 0 40px #e6eeff, 0 0 60px #e6eeff, 0 0 70px #e6eeff;
+        }
+        to {
+            text-shadow: 0 0 70px #fff, 0 0 10px #99b9ff, 0 0 40px #99b9ff, 0 0 40px #99b9ff, 0 0 60px #99b9ff 0 0 50px #99b9ff, 0 0 80px #99b9ff;
+        }
+    }
+
+    .modalButton {
+      height: 200px; width:200px; background-color: transparent; border:none; outline:none; border:none;
+    }
+
+    .month {
+      padding: 70px 25px;
+      width: 100%;
+      background-color: transparent;
+      text-align: center;
+
+    }
+
+    .month ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .month ul li {
+      color: white;
+      font-size: 60px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .month .prev {
+      float: left;
+      padding-top: 5px;
+    }
+
+    .month .next {
+      float: right;
+      padding-top: 5px;
+    }
+
+    .weekdays {
+      margin: 0;
+      padding: 12px 0;
+      background-color: #6381f7;
+      opacity: .6;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .weekdays li {
+      display: inline-block;
+      width: 13.87%;
+      color: white;
+      text-align: center;
+    }
+
+    .days {
+      padding: 10px 0;
+      background: #eee;
+      margin: 0;
+    }
+
+    .days li {
+      list-style-type: none;
+      display: inline-block;
+      width: 13.6%;
+      text-align: center;
+      margin-bottom: 5px;
+      color: white;
+      padding: 20px;
+      font-size: 15px;
+      font-family: Lucida Handwriting;
+    }
+
+    .days li .active {
+      padding: 5px;
+      background: #1abc9c;
+      color: white !important
+    }
+
+    /* Add media queries for smaller screens */
+    @media screen and (max-width:720px) {
+      .weekdays li, .days li {width: 13.1%;}
+    }
+
+    @media screen and (max-width: 420px) {
+      .weekdays li, .days li {width: 12.5%;}
+      .days li .active {padding: 2px;}
+    }
+
+    @media screen and (max-width: 290px) {
+      .weekdays li, .days li {width: 12.2%;}
+    }
+
+    /* The Modal (background) */
+
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 130px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      opacity: .9;
+    }
+
+    /* Modal Content */
+    .modal-content {
+      margin: auto;
+      margin-top: 20px;
+      margin-left:20px;
+      padding: 10px;
+      padding-top:40px;
+      padding-bottom:100px;
+      border: 1px solid #888;
+      width: 25%;
+      height: 25%;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    .button {
+      border: none;
+      outline: none;
+      height: 150px;
+      width: 150px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      background-color: transparent;
+    }
+
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+      display: none;
+    }
+
+    a:visited {
+      color: white;
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration:none;
+    }
+
+    *:focus {
+    outline: 0 !important;
+    }
+

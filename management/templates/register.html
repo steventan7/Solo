@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register Page
+{% endblock %}
+
+
+{% block content %}
+    <body class="text-center">
+            <div class="container">
+                <form method="POST" class="form-register" style="color:white; font-weight:bold;">
+                {{ form.hidden_tag() }}
+                <div class="center" style="padding-top: 60px; padding-bottom: 20px;">
+                    <h1 class="glow" style="font-size: 100px;">Welcome to Solo</h1>
+                </div>
+                <h1 class="glow" style="font-size:50px;"> Please create an account</h1>
+                <br>
+                {{ form.username.label() }}
+                {{ form.username(class="form-control", placeholder= "UserName") }}
+
+                {{ form.email_address.label() }}
+                {{ form.email_address(class="form-control", placeholder= "Email Address") }}
+
+                {{ form.password1.label() }}
+                {{ form.password1(class="form-control", placeholder= "Password") }}
+
+                {{ form.password2.label() }}
+                {{ form.password2(class="form-control", placeholder= "Confirm Password") }}
+                <br>
+
+                <div class="checkbox mb-3">
+                    <h6 class="glow"> Already have an account? </h6>
+                    <a class = "glow" style="font-family: Lucida Handwriting;" href="{{ url_for('login_page') }} ">Login</a>
+                </div>
+                {{ form.submit(class="btn btn-lg btn-block btn-primary")}}
+                </form>
+            </div>
+    </body>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}(
+
+{% block title %}
+Login Page
+{% endblock%}
+
+{% block content %}
+    <body class="text-center">
+        <div class="container">
+            <form method="POST" class="form-register" style="color:white; font-weight:bold;">
+            {{ form.hidden_tag() }}
+            <div class="center">
+                <h2 class="glow" style="font-size: 90px; padding-top:70px;">Welcome to Solo</h2>
+                <br>
+            </div>
+            <h2 class="glow" style="font-size:40px;"> Please login</h2>
+            <br>
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder= "UserName") }}
+
+            {{ form.password.label() }}
+            {{ form.password(class="form-control", placeholder= "Password") }}
+            <br>
+            <br>
+            <div class="checkbox mb-3">
+                <h6 class="glow"> Don't have an account? </h6>
+                <a class = "glow" style="font-family: Lucida Handwriting;" href="{{ url_for('register_page') }} ">Register</a>
+            </div>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+            </form>
+        </div>
+    </body>
+
+<!--<div class = "center">-->
+<!--    <button onclick="document.location='{{ url_for('time_page') }}'">Login</button>-->
+<!--</div>-->
+{% endblock %}
+

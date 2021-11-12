@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Conversation
+{% endblock%}
+
+{% block content %}
+    <div>
+        <div><p id = "question1" class="question"></p></div>
+    </div>
+    <div>
+        <input type="text" id="input1" name="yourday" class="response">
+    </div> <br> <br>
+    <div>
+        <p style="visibility: hidden;" id = "question2" class="question">How would you rate your day?</p><br><br>
+    </div>
+    <select id="feeling">
+      <option value="">--Select a choice--</option>
+      <option value="1">Shitty</option>
+      <option value="2">Pretty shitty</option>
+      <option value="3">Eh</option>
+      <option value="4">Could be better</option>
+      <option value="5">Alright</option>
+      <option value="6">Good</option>
+      <option value="7">Moderate</option>
+      <option value="8">Pretty good</option>
+      <option value="9">Wonderful</option>
+      <option value="10">Perfect</option>
+    </select>
+    <br>
+    <br>
+    <p id= 'question3' class="question"></p>
+    <br>
+    <p id='statement' class="question"></p>
+    <div>
+        <input type="text" id="input2" name="yourday" class="response" style="visibility: hidden;">
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        <p style="visibility:hidden;" class= "question" id="question4"></p>
+    </div>
+    <br>
+    <div>
+        <p style="visibility:hidden;" class="question" id="question5">Would you like to go to calendar?</p>
+    </div>
+    <br>
+    <br>
+    <div>
+        <button onclick="document.location='{{ url_for('transition_page') }}'" class="convoButton" id="moveToCalendar">Head to Personal Calendar</button>
+    </div>
+    <div>
+        <button class="convoButton" id="sayingNo">No thanks</button>
+    </div>
+    <br>
+    <br>
+    <div>
+        <p style="visibility: hidden;" class="question" id ="question6">Where would you like to go?</p>
+    </div>
+
+    <br>
+    <br>
+
+    <select id="exit" onchange="location = this.value;">
+      <option value="">--Select a choice--</option>
+      <option value="https://open.spotify.com/playlist/3ZUViiqRMy4hNylxf1nf78">Spotify</option>
+      <option value="https://www.youtube.com/">Youtube</option>
+      <option value="https://canvas.rutgers.edu/">Canvas</option>
+      <option value="https://mail.google.com/mail/u/0/#inbox/FMfcgzGlkrzCFLFvBhhJmVgqwZqzzkMT">Gmail</option>
+      <option value="https://www.linkedin.com/feed/">LinkedIn</option>
+    </select>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script type="text/javascript" src="static/script/conversation.js"></script>
+{% endblock %}

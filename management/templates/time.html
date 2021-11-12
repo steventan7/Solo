@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Refresh" content="2; url='{{ url_for('conversation_page') }}'" />
+    <title></title>
+</head>
+<body onload="change_background()">
+    <script>
+    const d = new Date();
+
+    function change_background() {
+        if (d.getHours() > 1 && d.getHours() <= 5) {
+             document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/fa/e9/0f/fae90f5ea1cf44f090a95ded2f539d3b.gif')";
+             document.body.style.backgroundSize = "cover";
+         }
+         if (d.getHours() > 5 && d.getHours() <= 10) {
+             document.body.style.backgroundImage = "url('https://www.coloradoboulevard.net/wp-content/uploads/2015/05/weather-sunny-day-gif.gif')";
+             document.body.style.backgroundSize = "cover";
+         }
+         if (d.getHours() > 10 && d.getHours() <= 17) {
+             document.body.style.backgroundImage = "url('https://thumbs.gfycat.com/CharmingFairDungenesscrab-size_restricted.gif')";
+             document.body.style.backgroundSize = "cover";
+         }
+         if (d.getHours() > 17 && d.getHours() <= 19) {
+             document.body.style.backgroundImage = "url('https://c.tenor.com/JOaBf6tyFVsAAAAC/sunset.gif')";
+             document.body.style.backgroundSize = "cover";
+         }
+         if (d.getHours() > 19 && d.getHours() < 24) {
+             document.body.style.backgroundImage = "url('https://c.tenor.com/G6MrMIxZsxYAAAAC/dark-night.gif')";
+             document.body.style.backgroundSize = "cover";
+         }
+    }
+    </script>
+</body>
+</html>

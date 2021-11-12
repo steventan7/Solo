@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Refresh" content="2; url='{{ url_for('november_page') }}'" />
+    <title></title>
+</head>
+<body onload="change_background()">
+    <script>
+    const d = new Date();
+
+    function change_background() {
+         var number = Math.floor(Math.random() *4) + 1;
+         if (number == 1) {
+             document.body.style.backgroundImage = "url('https://64.media.tumblr.com/9f202e266e78e5bc05ad78aa6524d36b/246364ed74c33a12-1a/s540x810/6933280434be3b9b435d0ad69ae6cb786a6bfc7e.gifv')";
+             document.body.style.backgroundSize = "cover";
+         }
+         else if (number == 2) {
+             document.body.style.backgroundImage = "url('https://media4.giphy.com/media/b29IZK1dP4aWs/giphy.gif')";
+             document.body.style.backgroundSize = "cover";
+         }
+         else if (number == 3) {
+             document.body.style.backgroundImage = "url('https://c.tenor.com/OgPwZJ9kbTEAAAAC/moon-beautiful.gif')";
+             document.body.style.backgroundSize = "cover";
+         }
+         else if (number == 4) {
+             document.body.style.backgroundImage = "url('https://acegif.com/wp-content/gif/outerspace-58.gif')";
+             document.body.style.backgroundSize = "cover";
+         }
+    }
+    </script>
+</body>
+</html>
