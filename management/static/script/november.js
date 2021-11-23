@@ -402,14 +402,14 @@
         window.onclick = function(event) { if (event.target == modal) { modal.style.display = "none";} }
     }
 
-    if (11 == 11) {
+    if (d.getDate() == 11) {
         var modal = document.getElementById("modal11"); var btn = document.getElementById("myBtn11"); var span = document.getElementsByClassName("close")[0];
         btn.onclick = function() { modal.style.display = "block";}
         span.onclick = function() { modal.style.display = "none";}
         window.onclick = function(event) { if (event.target == modal) { modal.style.display = "none";} }
     }
 
-    if (d.getDate() == 12) {
+    if (12 == 12) {
         var modal = document.getElementById("modal12"); var btn = document.getElementById("myBtn12"); var span = document.getElementsByClassName("close")[0];
         btn.onclick = function() { modal.style.display = "block";}
         span.onclick = function() { modal.style.display = "none";}
