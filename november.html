@@ -1,0 +1,475 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>My Calendar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="{{ url_for ('static', filename='styles/november.css') }}" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="leaves">
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+    <div class="month">
+      <ul><li class="next"><a href="{{ url_for('december_page') }}">&#10095;</a></li><li class="glow">
+        <a href="{{ url_for('conversation_page') }}">November</a><br>
+        </li>
+      </ul>
+    </div>
+
+    <div class="glow"><ul class="weekdays"><li>Su</li><li>Mo</li><li>Tu</li><li>We</li><li>Th</li><li>Fr</li><li>Sa</li></ul></div>
+    <ul class="days" style="background-color: transparent;">
+      <li></li>
+      <li><button class = "button" id="myBtn1">1</button></li>
+      <li><button class = "button" id="myBtn2">2</button></li>
+      <li><button class = "button" id="myBtn3">3</button></li>
+      <li><button class = "button" id="myBtn4">4</button></li>
+      <li><button class = "button" id="myBtn5">5</button></li>
+      <li><button class = "button" id="myBtn6">6</button></li>
+      <li><button class = "button" id="myBtn7">7</button></li>
+      <li><button class = "button" id="myBtn8">8</button></li>
+      <li><button class = "button" id="myBtn9">9</button></li>
+      <li><button class = "button" id="myBtn10">10</button></li>
+      <li><button class = "button" id="myBtn11">11</button></li>
+      <li><button class = "button" id="myBtn12">12</button></li>
+      <li><button class = "button" id="myBtn13">13</button></li>
+      <li><button class = "button" id="myBtn14">14</button></li>
+      <li><button class = "button" id="myBtn15">15</button></li>
+      <li><button class = "button" id="myBtn16">16</button></li>
+      <li><button class = "button" id="myBtn17">17</button></li>
+      <li><button class = "button" id="myBtn18">18</button></li>
+      <li><button class = "button" id="myBtn19">19</button></li>
+      <li><button class = "button" id="myBtn20">20</button></li>
+      <li><button class = "button" id="myBtn21">21</button></li>
+      <li><button class = "button" id="myBtn22">22</button></li>
+      <li><button class = "button" id="myBtn23">23</button></li>
+      <li><button class = "button" id="myBtn24">24</button></li>
+      <li><button class = "button" id="myBtn25">25</button></li>
+      <li><button class = "button" id="myBtn26">26</button></li>
+      <li><button class = "button" id="myBtn27">27</button></li>
+      <li><button class = "button" id="myBtn28">28</button></li>
+      <li><button class = "button" id="myBtn29">29</button></li>
+      <li><button class = "button" id="myBtn30">30</button></li>
+    </ul>
+    <div id="modal1" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button11" onclick="setRed1('myBtn1')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button21" onclick="setYellow1('myBtn1')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button31" onclick="setGreen1('myBtn1')" class = "modalButton"></button></div>
+        </div>
+      </center>
+    </div>
+    <div id="modal2" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button12" onclick="setRed2('myBtn2')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button22" onclick="setYellow2('myBtn2')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button32" onclick="setGreen2('myBtn2')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal3" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button13" onclick="setRed3('myBtn3')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button23" onclick="setYellow3('myBtn3')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button33" onclick="setGreen3('myBtn3')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal4" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button14" onclick="setRed4('myBtn4')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button24" onclick="setYellow4('myBtn4')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button34" onclick="setGreen4('myBtn4')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal5" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button15" onclick="setRed5('myBtn5')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button25" onclick="setYellow5('myBtn5')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button35" onclick="setGreen5('myBtn5')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal6" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button16" onclick="setRed6('myBtn6')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button26" onclick="setYellow6('myBtn6')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button36" onclick="setGreen6('myBtn6')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal7" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button17" onclick="setRed7('myBtn7')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button27" onclick="setYellow7('myBtn7')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button3f" onclick="setGreen7('myBtn7')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal8" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button18" onclick="setRed8('myBtn8')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button28" onclick="setYellow8('myBtn8')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button38" onclick="setGreen8('myBtn8')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal9" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button19" onclick="setRed9('myBtn9')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button29" onclick="setYellow9('myBtn9')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button39" onclick="setGreen9('myBtn9')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal10" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button110" onclick="setRed10('myBtn10')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button210" onclick="setYellow10('myBtn10')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button310" onclick="setGreen10('myBtn10')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal11" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button111" onclick="setRed11('myBtn11')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button211" onclick="setYellow11('myBtn11')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button311" onclick="setGreen11('myBtn11')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal12" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button112" onclick="setRed12('myBtn12')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button212" onclick="setYellow12('myBtn12')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button312" onclick="setGreen12('myBtn12')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal13" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button113" onclick="setRed13('myBtn13')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button213" onclick="setYellow13('myBtn13')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button313" onclick="setGreen13('myBtn13')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal14" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button114" onclick="setRed14('myBtn14')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button214" onclick="setYellow14('myBtn14')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button314" onclick="setGreen14('myBtn14')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal15" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button115" onclick="setRed15('myBtn15')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button215" onclick="setYellow15('myBtn15')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button315" onclick="setGreen15('myBtn15')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal16" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button116" onclick="setRed16('myBtn16')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button216" onclick="setYellow16('myBtn16')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button316" onclick="setGreen16('myBtn16')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal17" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button117" onclick="setRed17('myBtn17')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button217" onclick="setYellow17('myBtn17')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button317" onclick="setGreen17('myBtn17')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal18" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button118" onclick="setRed18('myBtn18')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button218" onclick="setYellow18('myBtn18')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button318" onclick="setGreen18('myBtn18')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal19" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button119" onclick="setRed19('myBtn19')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button219" onclick="setYellow19('myBtn19')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button319" onclick="setGreen19('myBtn19')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal20" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button120" onclick="setRed20('myBtn20')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button220" onclick="setYellow20('myBtn20')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button320" onclick="setGreen20('myBtn20')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal21" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button121" onclick="setRed21('myBtn21')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button221" onclick="setYellow21('myBtn21')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button321" onclick="setGreen21('myBtn21')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal22" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button122" onclick="setRed22('myBtn22')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button222" onclick="setYellow22('myBtn22')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button322" onclick="setGreen22('myBtn22')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal23" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button123" onclick="setRed23('myBtn23')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button223" onclick="setYellow23('myBtn23')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button323" onclick="setGreen23('myBtn23')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal24" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button124" onclick="setRed24('myBtn24')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button224" onclick="setYellow24('myBtn24')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button324" onclick="setGreen24('myBtn24')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal25" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button125" onclick="setRed25('myBtn25')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button225" onclick="setYellow25('myBtn25')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button325" onclick="setGreen25('myBtn25')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal26" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button126" onclick="setRed26('myBtn26')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button226" onclick="setYellow26('myBtn26')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button326" onclick="setGreen26('myBtn26')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal27" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button127" onclick="setRed27('myBtn27')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button227" onclick="setYellow27('myBtn27')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button327" onclick="setGreen27('myBtn27')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal28" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button128" onclick="setRed28('myBtn28')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button228" onclick="setYellow28('myBtn28')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button328" onclick="setGreen28('myBtn28')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal29" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button129" onclick="setRed29('myBtn29')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button229" onclick="setYellow29('myBtn29')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button329" onclick="setGreen29('myBtn29')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal30" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button130" onclick="setRed30('myBtn30')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button230" onclick="setYellow30('myBtn30')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button330" onclick="setGreen30('myBtn30')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <div id="modal31" class="modal">
+      <center>
+        <div class="modal-content" style="background-color: #b54504"><span class="close">&times;</span>
+          <div class="modal-body"><button type="button" id="button131" onclick="setRed31('myBtn31')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #d6bf0d"><span class="close">&times</span>
+          <div class="modal-body"><button type="button" id="button231" onclick="setYellow31('myBtn31')" class = "modalButton"></button></div>
+        </div>
+        <div class="modal-content" style="background-color: #4ca110"><span class="close">&times;</span>
+            <div class="modal-body"><button type="button" id="button331" onclick="setGreen31('myBtn31')" class = "modalButton"></button></div>
+          </div>
+      </center>
+    </div>
+    <script type="text/javascript" src="static/script/november.js"></script>
+
+</body>
+</html>
+
