@@ -409,7 +409,7 @@
         window.onclick = function(event) { if (event.target == modal) { modal.style.display = "none";} }
     }
 
-    if (12 == 12) {
+    if (d.getDate() == 12) {
         var modal = document.getElementById("modal12"); var btn = document.getElementById("myBtn12"); var span = document.getElementsByClassName("close")[0];
         btn.onclick = function() { modal.style.display = "block";}
         span.onclick = function() { modal.style.display = "none";}
